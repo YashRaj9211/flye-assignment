@@ -127,15 +127,6 @@ export class UserService {
         { type: 'Pilates', minutes: 45 }
       ]
     },
-    {
-      id: 15,
-      name: 'Alex Rodriguez',
-      workouts: [
-        { type: 'Baseball', minutes: 150 },
-        { type: 'Weightlifting', minutes: 60 },
-        { type: 'Running', minutes: 30 }
-      ]
-    }
   ];
 
   private usersSubject = new BehaviorSubject<any[]>(this.users);
@@ -151,7 +142,7 @@ export class UserService {
   }
 
   getUsers(): any[] {
-    return this.users;
+    return this.users.slice(); 
   }
 
   getUsersObservable(): Observable<any[]> {

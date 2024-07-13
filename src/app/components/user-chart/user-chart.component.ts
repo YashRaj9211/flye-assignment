@@ -10,6 +10,7 @@ export class UserChartComponent implements OnInit, OnChanges{
   @Input() users: any[] = [];
 
   chart: any;
+  cahrtType: string = "polarArea";
 
   ngOnInit() {
     this.createChart();
@@ -32,9 +33,7 @@ export class UserChartComponent implements OnInit, OnChanges{
         datasets: [{
           label: 'Minutes',
           data: workoutData.minutes,
-          backgroundColor: 'rgba(75, 192, 192, 0.2)',
-          borderColor: 'rgba(75, 192, 192, 1)',
-          borderWidth: 1
+          backgroundColor: ['rgb(216, 239, 211)', 'rgb(149, 210, 179)', 'rgb(85, 173, 155)', 'rgb(241, 248, 232)', 'rgb(224, 251, 226)'],
         }]
       },
       options: {
@@ -67,4 +66,12 @@ export class UserChartComponent implements OnInit, OnChanges{
 
     return workoutData;
   }
+
+  // toggleChart() {
+  //   this.cahrtType = this.cahrtType === "polarArea" ? "bar" : "polarArea";
+  //   if (this.chart) {
+  //     this.chart.destroy();
+  //   }
+  //   this.createChart();
+  // }
 }
