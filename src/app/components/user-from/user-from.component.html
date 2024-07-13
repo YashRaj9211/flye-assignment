@@ -1,0 +1,32 @@
+<form (ngSubmit)="onSubmit()" class="flex flex-col gap-4 bg p-8 w-fit rounded-2xl  mx-auto ">
+  <input
+    [(ngModel)]="name"
+    name="name"
+    placeholder="User name"
+    class="input input-bordered input-primary w-full max-w-xs"
+  />
+
+  <div class=" flex max-w-xs gap-2">
+    <input
+    [(ngModel)]="minutes"
+    name="minutes"
+    type="number"
+    placeholder="Minutes"
+    class="input input-bordered w-2/6"
+  />
+
+    <select
+      [(ngModel)]="workoutType"
+      name="workoutType"
+      class="select select-bordered w-4/6"
+    >
+      <option value="">Select workout type</option>
+      <option value="Running">Running</option>
+      <option value="Cycling">Cycling</option>
+      <option value="Swimming">Swimming</option>
+      <option value="Yoga">Yoga</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary max-w-xs">Add Workout</button>
+</form>

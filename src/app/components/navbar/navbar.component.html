@@ -1,0 +1,22 @@
+<!-- navbar.component.html -->
+<nav class="bg-green-5  00 p-4 text-white">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="text-lg font-bold">Workout Tracker</div>
+      <div class="hidden md:flex space-x-4">
+        <a routerLink="/add-workout" routerLinkActive="text-green-300" class="hover:text-green-300">Add Workout</a>
+        <a routerLink="/view-workouts" routerLinkActive="text-green-300" class="hover:text-green-300">View Workouts</a>
+      </div>
+      <div class="md:hidden">
+        <button class="focus:outline-none" (click)="toggleDropdown()">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div *ngIf="dropdownOpen" class="md:hidden mt-2">
+      <a routerLink="/add-workout" routerLinkActive="text-green-300" class="block px-4 py-2 hover:bg-green-600">Add Workout</a>
+      <a routerLink="/view-workouts" routerLinkActive="text-green-300" class="block px-4 py-2 hover:bg-green-600">View Workouts</a>
+    </div>
+  </nav>
+  
